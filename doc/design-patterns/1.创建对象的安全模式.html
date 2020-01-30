@@ -187,6 +187,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.3" data-path="../JavaScript/3.继承.html">
+            
+                <a href="../JavaScript/3.继承.html">
+            
+                    
+                    继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../JavaScript/4.toString.html">
+            
+                <a href="../JavaScript/4.toString.html">
+            
+                    
+                    toString
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -272,6 +298,7 @@
                                 <h2 id="javascript&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x5B89;&#x5168;&#x6A21;&#x5F0F;">JavaScript&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x5B89;&#x5168;&#x6A21;&#x5F0F;</h2>
 <blockquote>
 <p>&#x5BF9;&#x4E8E;&#x521D;&#x5B66;&#x8005;&#x53EF;&#x80FD;&#x4E0D;&#x9002;&#x5E94;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF0C;&#x5BFC;&#x81F4;&#x5FD8;&#x8BB0;&#x4F7F;&#x7528;new&#x800C;&#x72AF;&#x9519;&#x8BEF;&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x65F6;&#x6709;&#x4EBA;&#x5B9E;&#x65F6;&#x76D1;&#x6D4B;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x8D76;&#x5FEB;&#x627E;&#x4E00;&#x4F4D;&quot;&#x68C0;&#x5BDF;&#x957F;&quot;&#x5427;&#x3002;&#x6BD4;&#x5982;&#xFF0C;JavaScript&#x5728;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#x6709;&#x4E00;&#x79CD;&#x5B89;&#x5168;&#x6A21;&#x5F0F;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x7C7B;&#x95EE;&#x9898;&#x3002;</p>
+</blockquote>
 <h3 id="1-&#x5FD8;&#x8BB0;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x4EA7;&#x751F;&#x4EC0;&#x4E48;&#x95EE;&#x9898;">1. &#x5FD8;&#x8BB0;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x4EA7;&#x751F;&#x4EC0;&#x4E48;&#x95EE;&#x9898;</h3>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x56FE;&#x4E66;&#x7C7B;</span>
 <span class="hljs-keyword">var</span> Book = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title, time, type</span>) </span>{
@@ -286,6 +313,7 @@
 <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.time); <span class="hljs-comment">// 2020</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.type); <span class="hljs-comment">// js</span>
 </code></pre>
+<blockquote>
 <p>&#x793A;&#x4F8B;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;new&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF08;&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x5728;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;this&#x6307;&#x5411;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5C31;&#x662F;window&#xFF0C;&#x6240;&#x4EE5;&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x81EA;&#x7136;&#x5C31;&#x6DFB;&#x52A0;&#x5230;&#x4E86;window&#x4E0A;&#x9762;&#x3002;&#x7531;&#x4E8E;&#x7C7B;&#x4E2D;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#x4E86;undefined&#x3002;</p>
 <h3 id="2&#x5B89;&#x5168;&#x6A21;&#x5F0F;">2.&#x5B89;&#x5168;&#x6A21;&#x5F0F;</h3>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x56FE;&#x4E66;&#x5B89;&#x5168;&#x7C7B;</span>
@@ -353,7 +381,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"next":{"title":"面试相关","level":"1.3","depth":1,"path":"doc/interview/README.md","ref":"doc/interview/README.md","articles":[]},"previous":{"title":"设计模式","level":"1.2","depth":1,"path":"doc/design-patterns/README.md","ref":"doc/design-patterns/README.md","articles":[{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"path":"doc/design-patterns/1.创建对象的安全模式.md","ref":"doc/design-patterns/1.创建对象的安全模式.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/1.创建对象的安全模式.md","mtime":"2020-01-21T06:07:35.482Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T09:17:41.451Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"next":{"title":"面试相关","level":"1.3","depth":1,"path":"doc/interview/README.md","ref":"doc/interview/README.md","articles":[]},"previous":{"title":"设计模式","level":"1.2","depth":1,"path":"doc/design-patterns/README.md","ref":"doc/design-patterns/README.md","articles":[{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"path":"doc/design-patterns/1.创建对象的安全模式.md","ref":"doc/design-patterns/1.创建对象的安全模式.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/1.创建对象的安全模式.md","mtime":"2020-01-21T09:23:35.114Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-30T09:49:35.698Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
