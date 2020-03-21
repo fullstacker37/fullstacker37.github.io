@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>设计模式 · GitBook</title>
+        <title>设计模式面试题-1 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.创建对象的安全模式.md" />
+    <link rel="next" href="设计模式面试题-2.html" />
     
     
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../design-patterns/">
             
-                <a href="./">
+                <a href="../design-patterns/">
             
                     
                     设计模式
@@ -116,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="1.创建对象的安全模式.md">
+        <li class="chapter " data-level="1.2.1" data-path="../design-patterns/1.创建对象的安全模式.md">
             
                 <span>
             
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="简单工厂模式.html">
+        <li class="chapter " data-level="1.2.2" data-path="../design-patterns/简单工厂模式.html">
             
-                <a href="简单工厂模式.html">
+                <a href="../design-patterns/简单工厂模式.html">
             
                     
                     简单工厂模式
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../interview/">
+        <li class="chapter " data-level="1.3" data-path="./">
             
-                <a href="../interview/">
+                <a href="./">
             
                     
                     面试相关
@@ -161,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../interview/设计模式面试题-1.html">
+        <li class="chapter active" data-level="1.3.1" data-path="设计模式面试题-1.html">
             
-                <a href="../interview/设计模式面试题-1.html">
+                <a href="设计模式面试题-1.html">
             
                     
                     设计模式面试题-1
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../interview/设计模式面试题-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="设计模式面试题-2.html">
             
-                <a href="../interview/设计模式面试题-2.html">
+                <a href="设计模式面试题-2.html">
             
                     
                     设计模式面试题-2
@@ -325,7 +325,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >设计模式</a>
+        <a href="../.." >设计模式面试题-1</a>
     </h1>
 </div>
 
@@ -340,40 +340,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h1>
-<p>&#x200B;    &#x5171;&#x8BBE;&#x8BA1;23&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5206;&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<ol>
-<li>&#x521B;&#x5EFA;&#x578B;&#xFF1A;<ul>
-<li>&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#xFF09;</li>
-<li>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</li>
-<li>&#x539F;&#x578B;&#x6A21;&#x5F0F;</li>
+                                <h4 id="&#x67D0;&#x6253;&#x8F66;&#x516C;&#x53F8;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x9762;&#x8BD5;&#x9898;&#x5982;&#x4E0B;&#xFF1A;">&#x67D0;&#x6253;&#x8F66;&#x516C;&#x53F8;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x9762;&#x8BD5;&#x9898;&#x5982;&#x4E0B;&#xFF1A;</h4>
+<ul>
+<li>&#x6253;&#x8F66;&#x65F6;&#x53EF;&#x4EE5;&#x6253;&#x4E13;&#x8F66;&#x6216;&#x8005;&#x5FEB;&#x8F66;&#xFF0C;&#x4EFB;&#x4F55;&#x8F66;&#x90FD;&#x6709;&#x8F66;&#x724C;&#x53F7;&#x548C;&#x540D;&#x79F0;&#x3002;</li>
+<li>&#x4E0D;&#x540C;&#x8F66;&#x4EF7;&#x683C;&#x4E0D;&#x540C;&#xFF0C;&#x5FEB;&#x8F66;&#x6BCF;&#x516C;&#x91CC;1&#x5143;&#xFF0C;&#x4E13;&#x8F66;&#x6BCF;&#x516C;&#x91CC;2&#x5143;&#x3002;</li>
+<li>&#x884C;&#x7A0B;&#x5F00;&#x59CB;&#x65F6;&#xFF0C;&#x663E;&#x793A;&#x8F66;&#x8F86;&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x884C;&#x7A0B;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x663E;&#x793A;&#x6253;&#x8F66;&#x91D1;&#x989D;&#xFF08;&#x5047;&#x5B9A;&#x884C;&#x7A0B;&#x5C31;5&#x516C;&#x91CC;&#xFF09;</li>
 </ul>
-</li>
-<li>&#x7EC4;&#x5408;&#x578B;<ul>
-<li>&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x88C5;&#x9970;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;</li>
-<li>&#x5916;&#x89C2;&#x6A21;&#x5F0F;</li>
-<li>&#x6865;&#x63A5;&#x6A21;&#x5F0F;</li>
-<li>&#x7EC4;&#x5408;&#x6A21;&#x5F0F;</li>
-<li>&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-<li>&#x884C;&#x4E3A;&#x578B;<ul>
-<li>&#x7B56;&#x7565;&#x6A21;&#x5F0F;</li>
-<li>&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</li>
-<li>&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x804C;&#x8D23;&#x94FE;&#x6A21;&#x5F0F;</li>
-<li>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</li>
-<li>&#x5907;&#x5FD8;&#x5F55;&#x6A21;&#x5F0F;</li>
-<li>&#x72B6;&#x6001;&#x6A21;&#x5F0F;</li>
-<li>&#x8BBF;&#x95EE;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x89E3;&#x91CA;&#x5668;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-</ol>
+<hr>
+<h5 id="&#x7B54;&#x6848;&#x5982;&#x4E0B;&#xFF1A;">&#x7B54;&#x6848;&#x5982;&#x4E0B;&#xFF1A;</h5>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{
+    <span class="hljs-keyword">constructor</span>(name, number) {
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.number = number;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Trip</span> </span>{
+    <span class="hljs-keyword">constructor</span>(car) {
+        <span class="hljs-keyword">this</span>.car = car;
+    }
+    start() {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x884C;&#x7A0B;&#x5F00;&#x59CB;: &#x540D;&#x79F0;&#xFF1A;<span class="hljs-subst">${this.car.name}</span>, &#x8F66;&#x724C;&#x53F7;&#xFF1A;<span class="hljs-subst">${this.car.number}</span>`</span>);
+    }
+    end() {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x884C;&#x7A0B;&#x7ED3;&#x675F;: &#x6253;&#x8F66;&#x91D1;&#x989D;&#xFF1A;&apos;</span>, <span class="hljs-keyword">this</span>.car.money * <span class="hljs-number">5</span>);
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpecialCar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>{
+    <span class="hljs-keyword">constructor</span>(name, number) {
+        <span class="hljs-keyword">super</span>(name, number);
+        <span class="hljs-keyword">this</span>.money = <span class="hljs-number">2</span>;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FastCar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>{
+    <span class="hljs-keyword">constructor</span>(name, number) {
+        <span class="hljs-keyword">super</span>(name, number);
+        <span class="hljs-keyword">this</span>.money = <span class="hljs-number">1</span>;
+    }
+}
+<span class="hljs-keyword">const</span> sCar = <span class="hljs-keyword">new</span> SpecialCar(<span class="hljs-string">&apos;&#x4E13;&#x8F66;&apos;</span>, <span class="hljs-string">&apos;123456&apos;</span>);
+<span class="hljs-keyword">const</span> trip = <span class="hljs-keyword">new</span> Trip(sCar);
+trip.start();
+trip.end();
+</code></pre>
 
                                 
                                 </section>
@@ -401,12 +410,12 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 项目介绍">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 面试相关">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="1.创建对象的安全模式.md" class="navigation navigation-next " aria-label="Next page: 创建对象的安全模式">
+                <a href="设计模式面试题-2.html" class="navigation navigation-next " aria-label="Next page: 设计模式面试题-2">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -417,7 +426,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设计模式","level":"1.2","depth":1,"next":{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"path":"doc/design-patterns/1.创建对象的安全模式.md","ref":"doc/design-patterns/1.创建对象的安全模式.md","articles":[]},"previous":{"title":"项目介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/README.md","mtime":"2020-03-08T11:40:00.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-21T02:20:38.667Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设计模式面试题-1","level":"1.3.1","depth":2,"next":{"title":"设计模式面试题-2","level":"1.3.2","depth":2,"path":"doc/interview/设计模式面试题-2.md","ref":"doc/interview/设计模式面试题-2.md","articles":[]},"previous":{"title":"面试相关","level":"1.3","depth":1,"path":"doc/interview/README.md","ref":"doc/interview/README.md","articles":[{"title":"设计模式面试题-1","level":"1.3.1","depth":2,"path":"doc/interview/设计模式面试题-1.md","ref":"doc/interview/设计模式面试题-1.md","articles":[]},{"title":"设计模式面试题-2","level":"1.3.2","depth":2,"path":"doc/interview/设计模式面试题-2.md","ref":"doc/interview/设计模式面试题-2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/interview/设计模式面试题-1.md","mtime":"2020-03-21T01:39:27.486Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-21T02:20:38.667Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
