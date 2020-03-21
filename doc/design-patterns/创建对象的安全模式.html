@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>设计模式 · GitBook</title>
+        <title>创建对象的安全模式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="创建对象的安全模式.html" />
+    <link rel="next" href="简单工厂模式.html" />
     
     
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -116,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="创建对象的安全模式.html">
+        <li class="chapter active" data-level="1.2.1" data-path="创建对象的安全模式.html">
             
                 <a href="创建对象的安全模式.html">
             
@@ -325,7 +325,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >设计模式</a>
+        <a href="../.." >创建对象的安全模式</a>
     </h1>
 </div>
 
@@ -340,40 +340,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h1>
-<p>&#x200B;    &#x5171;&#x8BBE;&#x8BA1;23&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5206;&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<ol>
-<li>&#x521B;&#x5EFA;&#x578B;&#xFF1A;<ul>
-<li>&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#xFF09;</li>
-<li>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</li>
-<li>&#x539F;&#x578B;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-<li>&#x7EC4;&#x5408;&#x578B;<ul>
-<li>&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x88C5;&#x9970;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;</li>
-<li>&#x5916;&#x89C2;&#x6A21;&#x5F0F;</li>
-<li>&#x6865;&#x63A5;&#x6A21;&#x5F0F;</li>
-<li>&#x7EC4;&#x5408;&#x6A21;&#x5F0F;</li>
-<li>&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-<li>&#x884C;&#x4E3A;&#x578B;<ul>
-<li>&#x7B56;&#x7565;&#x6A21;&#x5F0F;</li>
-<li>&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</li>
-<li>&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x804C;&#x8D23;&#x94FE;&#x6A21;&#x5F0F;</li>
-<li>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</li>
-<li>&#x5907;&#x5FD8;&#x5F55;&#x6A21;&#x5F0F;</li>
-<li>&#x72B6;&#x6001;&#x6A21;&#x5F0F;</li>
-<li>&#x8BBF;&#x95EE;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x89E3;&#x91CA;&#x5668;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-</ol>
+                                <h2 id="javascript&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x5B89;&#x5168;&#x6A21;&#x5F0F;">JavaScript&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x5B89;&#x5168;&#x6A21;&#x5F0F;</h2>
+<blockquote>
+<p>&#x5BF9;&#x4E8E;&#x521D;&#x5B66;&#x8005;&#x53EF;&#x80FD;&#x4E0D;&#x9002;&#x5E94;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF0C;&#x5BFC;&#x81F4;&#x5FD8;&#x8BB0;&#x4F7F;&#x7528;new&#x800C;&#x72AF;&#x9519;&#x8BEF;&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x65F6;&#x6709;&#x4EBA;&#x5B9E;&#x65F6;&#x76D1;&#x6D4B;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x8D76;&#x5FEB;&#x627E;&#x4E00;&#x4F4D;&quot;&#x68C0;&#x5BDF;&#x957F;&quot;&#x5427;&#x3002;&#x6BD4;&#x5982;&#xFF0C;JavaScript&#x5728;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#x6709;&#x4E00;&#x79CD;&#x5B89;&#x5168;&#x6A21;&#x5F0F;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x7C7B;&#x95EE;&#x9898;&#x3002;</p>
+</blockquote>
+<h3 id="1-&#x5FD8;&#x8BB0;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x4EA7;&#x751F;&#x4EC0;&#x4E48;&#x95EE;&#x9898;">1. &#x5FD8;&#x8BB0;&#x4F7F;&#x7528;new&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x4EA7;&#x751F;&#x4EC0;&#x4E48;&#x95EE;&#x9898;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x56FE;&#x4E66;&#x7C7B;</span>
+<span class="hljs-keyword">var</span> Book = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title, time, type</span>) </span>{
+    <span class="hljs-keyword">this</span>.title = title;
+    <span class="hljs-keyword">this</span>.time = time;
+    <span class="hljs-keyword">this</span>.type = type;
+};
+<span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x672C;&#x4E66;</span>
+<span class="hljs-keyword">var</span> book = Book(<span class="hljs-string">&apos;JavaScript&apos;</span>, <span class="hljs-string">&apos;2020&apos;</span>, <span class="hljs-string">&apos;js&apos;</span>);
+<span class="hljs-built_in">console</span>.log(book); <span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.title); <span class="hljs-comment">// JavaScript</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.time); <span class="hljs-comment">// 2020</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.type); <span class="hljs-comment">// js</span>
+</code></pre>
+<blockquote>
+<p>&#x793A;&#x4F8B;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;new&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF08;&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x5728;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;this&#x6307;&#x5411;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5C31;&#x662F;window&#xFF0C;&#x6240;&#x4EE5;&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x81EA;&#x7136;&#x5C31;&#x6DFB;&#x52A0;&#x5230;&#x4E86;window&#x4E0A;&#x9762;&#x3002;&#x7531;&#x4E8E;&#x7C7B;&#x4E2D;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;&#x4E86;undefined&#x3002;</p>
+<h3 id="2&#x5B89;&#x5168;&#x6A21;&#x5F0F;">2.&#x5B89;&#x5168;&#x6A21;&#x5F0F;</h3>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x56FE;&#x4E66;&#x5B89;&#x5168;&#x7C7B;</span>
+<span class="hljs-keyword">var</span> Book = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title, time, type</span>) </span>{
+    <span class="hljs-comment">// &#x5224;&#x65AD;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;this&#x662F;&#x5426;&#x662F;&#x5F53;&#x524D;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> Book) {
+        <span class="hljs-keyword">this</span>.title = title;
+        <span class="hljs-keyword">this</span>.time = time;
+        <span class="hljs-keyword">this</span>.type = type;
+    }<span class="hljs-keyword">else</span> { <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x662F;&#x5219;&#x4F7F;&#x7528;&#x8FD4;&#x56DE;new&#x8FD9;&#x4E2A;&#x7C7B;&#x540E;&#x7684;&#x5B9E;&#x4F8B;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Book(title, time, type);
+    }
+};
+<span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x672C;&#x4E66;</span>
+<span class="hljs-keyword">var</span> book = Book(<span class="hljs-string">&apos;JavaScript&apos;</span>, <span class="hljs-string">&apos;2020&apos;</span>, <span class="hljs-string">&apos;js&apos;</span>);
+<span class="hljs-built_in">console</span>.log(book); <span class="hljs-comment">// Book {title: &quot;JavaScript&quot;, time: &quot;2020&quot;, type: &quot;js&quot;}</span>
+<span class="hljs-built_in">console</span>.log(book.title); <span class="hljs-comment">// JavaScript</span>
+<span class="hljs-built_in">console</span>.log(book.time); <span class="hljs-comment">// 2020</span>
+<span class="hljs-built_in">console</span>.log(book.type); <span class="hljs-comment">// js</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.title); <span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.time); <span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.type); <span class="hljs-comment">// undefined</span>
+</code></pre>
+</blockquote>
 
                                 
                                 </section>
@@ -401,12 +410,12 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 项目介绍">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 设计模式">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="创建对象的安全模式.html" class="navigation navigation-next " aria-label="Next page: 创建对象的安全模式">
+                <a href="简单工厂模式.html" class="navigation navigation-next " aria-label="Next page: 简单工厂模式">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -417,7 +426,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设计模式","level":"1.2","depth":1,"next":{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"path":"doc/design-patterns/创建对象的安全模式.md","ref":"doc/design-patterns/创建对象的安全模式.md","articles":[]},"previous":{"title":"项目介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/README.md","mtime":"2020-03-08T11:40:00.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-21T02:36:38.876Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"next":{"title":"简单工厂模式","level":"1.2.2","depth":2,"path":"doc/design-patterns/简单工厂模式.md","ref":"doc/design-patterns/简单工厂模式.md","articles":[]},"previous":{"title":"设计模式","level":"1.2","depth":1,"path":"doc/design-patterns/README.md","ref":"doc/design-patterns/README.md","articles":[{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"path":"doc/design-patterns/创建对象的安全模式.md","ref":"doc/design-patterns/创建对象的安全模式.md","articles":[]},{"title":"简单工厂模式","level":"1.2.2","depth":2,"path":"doc/design-patterns/简单工厂模式.md","ref":"doc/design-patterns/简单工厂模式.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/创建对象的安全模式.md","mtime":"2020-03-21T01:22:52.509Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-21T02:36:38.876Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
