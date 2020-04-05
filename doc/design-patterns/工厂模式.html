@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>设计模式 · GitBook</title>
+        <title>工厂模式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="创建对象的安全模式.html" />
+    <link rel="next" href="抽象工厂模式.html" />
     
     
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="简单工厂模式.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -142,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="工厂模式.html">
+        <li class="chapter active" data-level="1.2.3" data-path="工厂模式.html">
             
                 <a href="工厂模式.html">
             
@@ -364,7 +364,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >设计模式</a>
+        <a href="../.." >工厂模式</a>
     </h1>
 </div>
 
@@ -379,40 +379,77 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h1>
-<p>&#x200B;    &#x5171;&#x8BBE;&#x8BA1;23&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5206;&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<ol>
-<li>&#x521B;&#x5EFA;&#x578B;&#xFF1A;<ul>
-<li>&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF08;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#xFF09;</li>
-<li>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</li>
-<li>&#x539F;&#x578B;&#x6A21;&#x5F0F;</li>
+                                <blockquote>
+<p>&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF08;&#x89C6;&#x4E3A;&#x5DE5;&#x5382;&#x91CC;&#x7684;&#x4EA7;&#x54C1;&#xFF09;&#x65F6;&#x65E0;&#x9700;&#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x3002;
+&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7531;&#x5B50;&#x7C7B;&#x51B3;&#x5B9A;&#x5B9E;&#x4F8B;&#x5316;&#x54EA;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;&#x8BE5;&#x6A21;&#x5F0F;&#x4F7F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5EF6;&#x8FDF;&#x5230;&#x4E86;&#x5B50;&#x7C7B;&#x3002;&#x800C;&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x4EE5;&#x4FBF;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x3002;
+&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x5341;&#x5206;&#x6709;&#x7528;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x6D41;&#x7A0B;&#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BD4;&#x5982;&#x4F9D;&#x8D56;&#x4E8E;&#x5F88;&#x591A;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7B49;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x4F60;&#x4F1A;&#x7ECF;&#x5E38;&#x5728;&#x7A0B;&#x5E8F;&#x91CC;&#x770B;&#x5230;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x8BA9;&#x5B50;&#x7C7B;&#x5B9A;&#x4E49;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x3002;
+```javascript
+// &#x5B89;&#x5168;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x7684;&#x5DE5;&#x5382;&#x7C7B;
+var Factory = function (type, content) {
+    if (this instanceof Factory) {
+        return this<a href="content">type</a>;
+    } else {
+        return new Factory(type, content);
+    }
+}</p>
+</blockquote>
+<p>// &#x5DE5;&#x5382;&#x539F;&#x578B;&#x4E2D;&#x8BBE;&#x7F6E;&#x521B;&#x5EFA;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x57FA;&#x7C7B;
+Factory.prototype = {
+    Yuwen: function (content) {
+        console.log(content);
+    },
+    Shuxue: function(content) {
+        console.log(content);
+    },
+    English: function(content) {
+        console.log(content);
+    }
+}</p>
+<p>var data = [
+    {
+        type: &apos;Yuwen&apos;,
+        content: &apos;&#x6211;&#x662F;&#x8BED;&#x6587;&#x8001;&#x5E08;!&apos;
+    },
+    {
+        type: &apos;Shuxue&apos;,
+        content: &apos;&#x6211;&#x662F;&#x6570;&#x5B66;&#x8001;&#x5E08;!&apos;
+    },
+    {
+        type: &apos;English&apos;,
+        content: &apos;&#x6211;&#x662F;&#x82F1;&#x8BED;&#x8001;&#x5E08;!&apos;
+    }
+];</p>
+<p>for (var i = 0; i &lt; data.length; i++) {
+    Factory(data[i].type, data[i].content);
+}</p>
+<pre><code>
+**&#x6E90;&#x7801;&#x4E2D;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;**
+- Vue&#x4E2D;&#x7684;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;
+
+&#x548C;&#x539F;&#x751F;&#x7684;document.createElement &#x7C7B;&#x4F3C;&#xFF0C;Vue&#x5728;&#x751F;&#x6210;&#x865A;&#x62DF;DOM&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;createElement&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x751F;&#x6210;VNode&#xFF0C;&#x7528;&#x6765;&#x4F5C;&#x4E3A;&#x771F;&#x5B9E;DOM&#x8282;&#x70B9;&#x7684;&#x6620;&#x5C04;&#xFF1A;
+
+```javascript
+createElement(&apos;div&apos;, { class: &apos;body&apos; }, [
+    createElement(&apos;a&apos;, { class: &apos;title&apos;, attrs: { href: &apos;www.baidu.com&apos; } }),
+    createElement(&apos;span&apos;, { class: &apos;content&apos; }, &apos;&#x767E;&#x5EA6;&#x7F51;&#x5740;&apos;)
+])
+</code></pre><p>createElement &#x51FD;&#x6570;&#x7ED3;&#x6784;&#x5927;&#x6982;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Vnode</span> (<span class="hljs-title">tag</span>, <span class="hljs-title">data</span>, <span class="hljs-title">children</span>) </span>{ ... }
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createElement</span>(<span class="hljs-params">tag, data, children</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vnode(tag, data, children)
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;Vue&#x63D0;&#x4F9B;&#x7684; createElement &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x4E86;&#x590D;&#x6742;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x8005;&#x6765;&#x8BF4;&#x5C31;&#x5F88;&#x65B9;&#x4FBF;&#x4E86;&#x3002;</p>
+<p><strong>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</strong></p>
+<p>&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x60C5;&#x666F;&#x4E0B;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7279;&#x522B;&#x6709;&#x7528;&#xFF1A;</p>
+<ul>
+<li>&#x5BF9;&#x8C61;&#x7684;&#x6784;&#x5EFA;&#x5341;&#x5206;&#x590D;&#x6742;</li>
+<li>&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x5177;&#x4F53;&#x73AF;&#x5883;&#x521B;&#x5EFA;&#x4E0D;&#x540C;&#x5B9E;&#x4F8B;</li>
+<li>&#x5904;&#x7406;&#x5927;&#x91CF;&#x5177;&#x6709;&#x76F8;&#x540C;&#x5C5E;&#x6027;&#x7684;&#x5C0F;&#x5BF9;&#x8C61;</li>
 </ul>
-</li>
-<li>&#x7EC4;&#x5408;&#x578B;<ul>
-<li>&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x88C5;&#x9970;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;</li>
-<li>&#x5916;&#x89C2;&#x6A21;&#x5F0F;</li>
-<li>&#x6865;&#x63A5;&#x6A21;&#x5F0F;</li>
-<li>&#x7EC4;&#x5408;&#x6A21;&#x5F0F;</li>
-<li>&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-<li>&#x884C;&#x4E3A;&#x578B;<ul>
-<li>&#x7B56;&#x7565;&#x6A21;&#x5F0F;</li>
-<li>&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</li>
-<li>&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;</li>
-<li>&#x804C;&#x8D23;&#x94FE;&#x6A21;&#x5F0F;</li>
-<li>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</li>
-<li>&#x5907;&#x5FD8;&#x5F55;&#x6A21;&#x5F0F;</li>
-<li>&#x72B6;&#x6001;&#x6A21;&#x5F0F;</li>
-<li>&#x8BBF;&#x95EE;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;</li>
-<li>&#x89E3;&#x91CA;&#x5668;&#x6A21;&#x5F0F;</li>
-</ul>
-</li>
-</ol>
+<p><strong>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4E0D;&#x8BE5;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</strong></p>
+<p>&#x4E0D;&#x6EE5;&#x7528;&#x8FD0;&#x7528;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x7ED9;&#x4EE3;&#x7801;&#x589E;&#x52A0;&#x4E86;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x5F97;&#x6D4B;&#x8BD5;&#x96BE;&#x4EE5;&#x8FD0;&#x884C;&#x4E0B;&#x53BB;&#x3002;</p>
 
                                 
                                 </section>
@@ -440,12 +477,12 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 项目介绍">
+                <a href="简单工厂模式.html" class="navigation navigation-prev " aria-label="Previous page: 简单工厂模式">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="创建对象的安全模式.html" class="navigation navigation-next " aria-label="Next page: 创建对象的安全模式">
+                <a href="抽象工厂模式.html" class="navigation navigation-next " aria-label="Next page: 抽象工厂模式">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -456,7 +493,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设计模式","level":"1.2","depth":1,"next":{"title":"创建对象的安全模式","level":"1.2.1","depth":2,"path":"doc/design-patterns/创建对象的安全模式.md","ref":"doc/design-patterns/创建对象的安全模式.md","articles":[]},"previous":{"title":"项目介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/README.md","mtime":"2020-03-08T11:40:00.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-05T12:12:42.309Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"工厂模式","level":"1.2.3","depth":2,"next":{"title":"抽象工厂模式","level":"1.2.4","depth":2,"path":"doc/design-patterns/抽象工厂模式.md","ref":"doc/design-patterns/抽象工厂模式.md","articles":[]},"previous":{"title":"简单工厂模式","level":"1.2.2","depth":2,"path":"doc/design-patterns/简单工厂模式.md","ref":"doc/design-patterns/简单工厂模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/design-patterns/工厂模式.md","mtime":"2020-03-23T15:44:30.126Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-05T12:12:42.309Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
